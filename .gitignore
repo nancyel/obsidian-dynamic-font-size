@@ -1,0 +1,10 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Build
+main.js
+*.js.map
+
+# macOS
+.DS_Store

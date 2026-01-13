@@ -1,0 +1,30 @@
+{
+  "name": "dynamic-font-size",
+  "version": "1.0.0",
+  "description": "Dynamically adjust font size of note content using a property slider",
+  "main": "main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "version": "node version-bump.mjs && git add manifest.json versions.json"
+  },
+  "keywords": [
+    "font",
+    "font-size",
+    "dynamic",
+    "obsidian",
+    "plugin"
+  ],
+  "author": "Nancy Lee",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^25.0.7",
+    "@typescript-eslint/eslint-plugin": "^8.53.0",
+    "@typescript-eslint/parser": "^8.53.0",
+    "builtin-modules": "^5.0.0",
+    "esbuild": "^0.27.2",
+    "obsidian": "latest",
+    "tslib": "^2.8.1",
+    "typescript": "^5.9.3"
+  }
+}
