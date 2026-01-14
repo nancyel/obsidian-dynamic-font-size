@@ -1,0 +1,44 @@
+/* Dynamic Font Size Plugin Styles */
+
+.dynamic-font-size-status {
+  font-size: 0.9em;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
+.dynamic-font-size-slider-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background-color: var(--background-secondary);
+  border-radius: 4px;
+  margin: 4px;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.dynamic-font-size-label {
+  font-size: 0.9em;
+  font-weight: 500;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.dynamic-font-size-slider {
+  flex: 1;
+  min-width: 150px;
+  accent-color: var(--interactive-accent);
+}
+
+.dynamic-font-size-value {
+  font-size: 0.9em;
+  font-weight: 500;
+  min-width: 60px;
+  text-align: right;
+  color: var(--text-muted);
+}
+
+/* Smooth transition for font size changes */
+.dynamic-font-size-active {
+  transition: font-size 0.2s ease-in-out;
+}

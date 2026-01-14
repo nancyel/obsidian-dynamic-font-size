@@ -2,6 +2,8 @@
 
 A custom Obsidian plugin that allows you to dynamically adjust the font size of note content through frontmatter properties with an intuitive slider interface.
 
+![dynamic-font-size](/public/dynamic-font-size-demo.png)
+
 ## Features
 
 - **Property-based font sizing**: Set font size using the `font-size` property in note frontmatter
