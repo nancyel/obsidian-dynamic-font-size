@@ -253,7 +253,7 @@ export default class DynamicFontSizePlugin extends Plugin {
 
     // Create slider with label
     const label = document.createElement("label");
-    label.textContent = "Font Size: ";
+    label.textContent = "Font size: ";
     label.addClass("dynamic-font-size-label");
 
     const valueDisplay = document.createElement("span");
@@ -269,13 +269,17 @@ export default class DynamicFontSizePlugin extends Plugin {
     slider.addClass("dynamic-font-size-slider");
 
     // Update on slider change
-    slider.addEventListener("input", async (e) => {
+    slider.addEventListener("input", (e) => {
       const target = e.target as HTMLInputElement;
       const newSize = parseFloat(target.value);
       valueDisplay.textContent = `${newSize.toFixed(2)}rem`;
 
       // Update frontmatter
-      await this.updateFrontmatterFontSize(activeView.file!, newSize);
+      this.updateFrontmatterFontSize(activeView.file!, newSize).catch(
+        (error) => {
+          console.error("Failed to update frontmatter:", error);
+        }
+      );
     });
 
     this.sliderContainer.appendChild(label);
@@ -362,7 +366,7 @@ class DynamicFontSizeSettingTab extends PluginSettingTab {
       text: 'Add a "font-size" property to your note\'s frontmatter with a value in rem units (e.g., "1.5rem" or "1.5"). The font size will be applied automatically.',
     });
     containerEl.createEl("p", {
-      text: 'Use the command "Toggle font size slider" to show/hide a slider for easy adjustment.',
+      text: 'Use the command "toggle font size slider" to show/hide a slider for easy adjustment.',
     });
 
     const example = containerEl.createEl("pre");
@@ -370,6 +374,6 @@ class DynamicFontSizeSettingTab extends PluginSettingTab {
 font-size: 1.5rem
 ---
 
-Your note content here...`;
+Your note content here`;
   }
 }
